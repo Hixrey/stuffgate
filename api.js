@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000; // Port sur lequel le serveur écoutera
+const port = 80; // Port sur lequel le serveur écoutera
 // Route pour la page d'accueil
 var players=[];
 
@@ -36,7 +36,6 @@ app.post('/players', (req, res) => {
     res.send(players);
     })
 // Démarrez le serveur
-app.listen(port, () => {
-console.log(`Le serveur est en cours d'exécution sur le port
-${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Le serveur est en cours d'exécution sur le port ${port}`);
 });
